@@ -73,6 +73,7 @@ public class EditPackageFragment extends Fragment {
                 paquet.setId(paquete.getId());
                 paquet.setDescripcion(etDescriptionE.getText().toString());
                 paquet.setPrecio(Float.parseFloat(etPrizeE.getText().toString()));
+                paquet.setIdcamionero(paquete.getIdcamionero());
                 viewModel.updatePaquete(paquete.getId(), paquet);
                 Toast.makeText(getActivity(), "Update correctly", Toast.LENGTH_LONG).show();
                 NavHostFragment.findNavController(EditPackageFragment.this).navigate(R.id.action_editPackageFragment_to_FirstFragment);
