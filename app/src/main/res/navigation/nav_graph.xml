@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.jesus.clientetransportes.view.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_InsertFragment"
+            app:destination="@id/InsertFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_recyclerFragment"
+            app:destination="@id/recyclerFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_insertPackageFragment"
+            app:destination="@id/insertPackageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/InsertFragment"
+        android:name="com.jesus.clientetransportes.view.InsertFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_insert">
+
+        <action
+            android:id="@+id/action_InsertFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recyclerFragment"
+        android:name="com.jesus.clientetransportes.view.RecyclerFragment"
+        android:label="fragment_recycler"
+        tools:layout="@layout/fragment_recycler" >
+        <action
+            android:id="@+id/action_recyclerFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_recyclerFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+        <action
+            android:id="@+id/action_recyclerFragment_to_editPackageFragment"
+            app:destination="@id/editPackageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.jesus.clientetransportes.view.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" >
+        <action
+            android:id="@+id/action_editFragment_to_recyclerFragment"
+            app:destination="@id/recyclerFragment" />
+        <action
+            android:id="@+id/action_editFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertPackageFragment"
+        android:name="com.jesus.clientetransportes.view.InsertPackageFragment"
+        android:label="fragment_insert_package"
+        tools:layout="@layout/fragment_insert_package" >
+        <action
+            android:id="@+id/action_insertPackageFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPackageFragment"
+        android:name="com.jesus.clientetransportes.view.EditPackageFragment"
+        android:label="fragment_edit_package"
+        tools:layout="@layout/fragment_edit_package" >
+        <action
+            android:id="@+id/action_editPackageFragment_to_recyclerFragment"
+            app:destination="@id/recyclerFragment" />
+        <action
+            android:id="@+id/action_editPackageFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+</navigation>
